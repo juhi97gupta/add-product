@@ -1,0 +1,140 @@
+<div style="text-align:right"><br>
+    <button type="button" class="btn btn-dark" (click)="gotoshowproduct()">Show product</button>
+  </div>
+<div style="margin-top: 2%; margin-left: auto; margin-right: auto; width:25%;">
+
+<h3>Add new product into the list</h3>
+<div [hidden]="submitted" style="width: 120%;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Product Name:-</label>
+      <input type="text" class="form-control" id="productName" required [(ngModel)]="productName" name="productName"  #productNamecontrol="ngModel" required />
+     
+     
+      <small id="idHelp" class="form-text text-muted" *ngIf="productNamecontrol.touched && productNamecontrol.invalid" ><font color="red" >
+          *Product Name should be filled.</font></small>
+    </div>
+    <div class="form-group">
+      <label for="name">Merchant Id:-</label>
+      <input type="number" class="form-control" id="merchantId" required [(ngModel)]="merchantId" name="merchantId" #merchantIdcontrol="ngModel" required />
+     
+     
+      <small id="idHelp" class="form-text text-muted" *ngIf="merchantIdcontrol.touched && merchantIdcontrol.invalid" ><font color="red" >
+          *Merchant Id should be filled.</font></small>
+    </div>
+
+   
+    
+    <div class="form-group">
+      <label for="age">Product company Name:-</label>
+      <input type="text" class="form-control" id="company" required [(ngModel)]="company" name="company" #companycontrol="ngModel" required />
+     
+     
+      <small id="idHelp" class="form-text text-muted" *ngIf="companycontrol.touched && companycontrol.invalid" ><font color="red" >
+          *Product company name should be filled.</font></small>
+    </div>
+    
+
+    <div class="form-group">
+      <label for="age">Product photo:-</label>
+      <input type="text" class="form-control" id="photo" required [(ngModel)]="photo" name="photo" #photocontrol="ngModel" required />
+     
+     
+      <small id="idHelp" class="form-text text-muted" *ngIf="photocontrol.touched && photocontrol.invalid" ><font color="red" >
+          * Company should be filled.</font></small>
+    </div>
+    
+
+    <div class="form-group">
+      <label for="age">Product description:-</label>
+      <input type="text" class="form-control" id="description" required [(ngModel)]="description" name="description" #descriptioncontrol="ngModel" required />
+     
+     
+      <small id="idHelp" class="form-text text-muted" *ngIf="descriptioncontrol.touched && descriptioncontrol.invalid" ><font color="red" >
+          * Product description should be filled.</font></small>
+    </div>
+    
+
+    <div class="form-group">
+      <label for="age">Product quantity:-</label>
+      <input type="number" class="form-control" id="quantities" required [(ngModel)]="quantity" name="quantities" #quantitiescontrol="ngModel" required />
+     
+     
+      <small id="idHelp" class="form-text text-muted" *ngIf="quantitiescontrol.touched && quantitiescontrol.invalid" ><font color="red" >
+          * Product quantity should be filled.</font></small>
+    </div>
+    
+
+    <div class="form-group">
+      <label for="age">Product category:-</label>
+      <input type="text" class="form-control" id="category" required [(ngModel)]="category" name="category" #categorycontrol="ngModel" required />
+     
+     
+      <small id="idHelp" class="form-text text-muted" *ngIf="categorycontrol.touched && categorycontrol.invalid" ><font color="red" >
+          * Product category should be filled.</font></small>
+    </div>
+   
+
+    <div class="form-group">
+      <label for="age">Product sub-category:-</label>
+      <input type="text" class="form-control" id="subcategory" required [(ngModel)]="subcategory" name="subcategory"  #subcategorycontrol="ngModel" required />
+     
+     
+      <small id="idHelp" class="form-text text-muted" *ngIf="subcategorycontrol.touched && subcategorycontrol.invalid" ><font color="red" >
+          * Product sub-category should be filled.</font></small>
+    </div>
+   
+
+
+    <div class="form-group">
+      <label for="age">Product tag (For Similar Product Generation):-</label>
+      <input type="text" class="form-control" id="tags[0]" disabled [(ngModel)]="company" name="tags[0]">
+      <input type="text" class="form-control" id="tags[1]" [(ngModel)]="tags[1]" name="tags[1]" placeholder="Mobile RAM / Battery Life / Screen Size / Cloth Material" #tagscontrol="ngModel" required />
+      
+      <small id="idHelp" class="form-text text-muted" *ngIf="tagscontrol.touched && tagscontrol.invalid" ><font color="red" >
+          *Product tags should be filled.</font></small>
+      <input type="text" class="form-control" id="tags[2]"  [(ngModel)]="tags[2]" name="tags[2]" placeholder="Model / Cloth Color / Pixels">
+    </div>
+
+    
+    <div class="form-group">
+      <label for="age">Product sold quantities:-</label>
+      <input type="number" class="form-control" id="soldQuantities" required [(ngModel)]="soldQuantities" name="soldQuantities" #soldQuantitiescontrol="ngModel" required />
+     
+     
+      <small id="idHelp" class="form-text text-muted" *ngIf="soldQuantitiescontrol.touched && soldQuantitiescontrol.invalid" ><font color="red" >
+          *This field must be filled.</font></small>
+    </div>
+
+    <div class="form-group">
+      <label for="age">Product price:-</label>
+
+      <input type="number" class="form-control" id="price" required [(ngModel)]="price" name="price" #pricecontrol="ngModel" required />
+     
+     
+      <small id="idHelp" class="form-text text-muted" *ngIf="pricecontrol.touched && pricecontrol.invalid" ><font color="red" >
+          *This field must be filled.</font></small>
+    </div>
+
+    <div class="form-group">
+      <label for="age">Product release date:-</label>
+      <input type="text" class="form-control" id="releaseDate" required [(ngModel)]="releaseDate" name="releaseDate" #releaseDatecontrol="ngModel" required />
+     
+     
+      <small id="idHelp" class="form-text text-muted" *ngIf="releaseDatecontrol.touched && releaseDatecontrol.invalid" ><font color="red" >
+          *This field must be filled.</font></small>
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+    &nbsp;&nbsp;
+    <button type="reset" class="btn btn-success">Reset</button>
+
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <button class="btn btn-success" (click)="newProduct()">Add</button>
+</div>
+ 
+</div>
